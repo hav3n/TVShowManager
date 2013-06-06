@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -66,6 +67,10 @@ public class ShowSearchFragment extends ListFragment
 						String query = searchBar.getText().toString();
 						String urlEncodedQuery = URLEncoder.encode(query, "utf-8");
 						url = String.format(Constants.SEARCH, urlEncodedQuery);
+						
+						InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+			            imm.hideSoftInputFromWindow(searchBar.getWindowToken(), 
+			                                      InputMethodManager.RESULT_UNCHANGED_SHOWN);
 
 						new DownloadXMLData().execute();
 					} catch (UnsupportedEncodingException e)
@@ -145,7 +150,7 @@ public class ShowSearchFragment extends ListFragment
 
 					singleInfoURL = showInfoUrls.get(i);
 					singleInfoXML = parser.getXmlFromUrl(singleInfoURL);
-					Log.i("INFO", singleInfoXML);
+					//Log.i("INFO", singleInfoXML);
 					showInfoEntries.add(parser.parseShowInfo(singleInfoXML));
 					Log.i("INFO", "Got Show info data");
 

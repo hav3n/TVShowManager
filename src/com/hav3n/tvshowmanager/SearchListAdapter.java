@@ -68,8 +68,8 @@ public class SearchListAdapter extends BaseAdapter
 		String images;
 		map = showInfoEntries.get(position);
 		images = imageUrls.get(position);
-		
-		Log.i("INFO",map.get(Constants.TAG_NAME));
+
+		Log.i("INFO", map.get(Constants.TAG_NAME));
 
 		showName.setText(map.get(Constants.TAG_NAME));
 		imageLoader.DisplayImage(images, showImage);

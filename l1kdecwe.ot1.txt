@@ -1,0 +1,90 @@
+﻿Initial Implementation of First Tab
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   .project
+#	modified:   AndroidManifest.xml
+#	modified:   bin/AndroidManifest.xml
+#	modified:   bin/TVShowManager.apk
+#	modified:   bin/classes.dex
+#	new file:   bin/classes/com/hav3n/tvshowmanager/FileCache.class
+#	new file:   bin/classes/com/hav3n/tvshowmanager/ImageLoader$BitmapDisplayer.class
+#	new file:   bin/classes/com/hav3n/tvshowmanager/ImageLoader$PhotoToLoad.class
+#	new file:   bin/classes/com/hav3n/tvshowmanager/ImageLoader$PhotosLoader.class
+#	new file:   bin/classes/com/hav3n/tvshowmanager/ImageLoader.class
+#	new file:   bin/classes/com/hav3n/tvshowmanager/MemoryCache.class
+#	modified:   bin/classes/com/hav3n/tvshowmanager/R$drawable.class
+#	modified:   bin/classes/com/hav3n/tvshowmanager/R$id.class
+#	modified:   bin/classes/com/hav3n/tvshowmanager/R$layout.class
+#	modified:   bin/classes/com/hav3n/tvshowmanager/R$menu.class
+#	modified:   bin/classes/com/hav3n/tvshowmanager/R$string.class
+#	modified:   bin/classes/com/hav3n/tvshowmanager/R$style.class
+#	new file:   bin/classes/com/hav3n/tvshowmanager/SearchListAdapter.class
+#	modified:   bin/classes/com/hav3n/tvshowmanager/ShowSearchFragment$1.class
+#	new file:   bin/classes/com/hav3n/tvshowmanager/ShowSearchFragment$DownloadXMLData.class
+#	modified:   bin/classes/com/hav3n/tvshowmanager/ShowSearchFragment.class
+#	new file:   bin/classes/com/hav3n/tvshowmanager/Utils.class
+#	modified:   bin/classes/com/hav3n/tvshowmanager/XMLParser$ShowEntry.class
+#	modified:   bin/classes/com/hav3n/tvshowmanager/XMLParser.class
+#	new file:   bin/classes/com/hav3n/tvshowmanager/constants/Constants.class
+#	modified:   bin/dexedLibs/android-support-v4-fe2b360c56b3505d4f0add3502e5590f.jar
+#	new file:   bin/jarlist.cache
+#	new file:   bin/res/drawable-hdpi/arrow.png
+#	new file:   bin/res/drawable-hdpi/no_image.png
+#	new file:   bin/res/drawable-mdpi/arrow.png
+#	new file:   bin/res/drawable-mdpi/no_image.png
+#	new file:   bin/res/drawable-xhdpi/arrow.png
+#	new file:   bin/res/drawable-xhdpi/no_image.png
+#	new file:   bin/res/drawable-xxhdpi/arrow.png
+#	new file:   bin/res/drawable-xxhdpi/no_image.png
+#	modified:   bin/resources.ap_
+#	new file:   emjorsgo.zfw.txt
+#	modified:   gen/com/hav3n/tvshowmanager/R.java
+#	new file:   lixirltx.ao4.txt
+#	new file:   res/drawable-hdpi/arrow.png
+#	new file:   res/drawable-hdpi/gradient_bg.xml
+#	new file:   res/drawable-hdpi/gradient_bg_hover.xml
+#	new file:   res/drawable-hdpi/image_bg.xml
+#	new file:   res/drawable-hdpi/list_selector.xml
+#	new file:   res/drawable-hdpi/no_image.png
+#	new file:   res/drawable-mdpi/arrow.png
+#	new file:   res/drawable-mdpi/gradient_bg.xml
+#	new file:   res/drawable-mdpi/gradient_bg_hover.xml
+#	new file:   res/drawable-mdpi/image_bg.xml
+#	new file:   res/drawable-mdpi/list_selector.xml
+#	new file:   res/drawable-mdpi/no_image.png
+#	new file:   res/drawable-xhdpi/arrow.png
+#	new file:   res/drawable-xhdpi/gradient_bg.xml
+#	new file:   res/drawable-xhdpi/gradient_bg_hover.xml
+#	new file:   res/drawable-xhdpi/image_bg.xml
+#	new file:   res/drawable-xhdpi/list_selector.xml
+#	new file:   res/drawable-xhdpi/no_image.png
+#	new file:   res/drawable-xxhdpi/arrow.png
+#	new file:   res/drawable-xxhdpi/gradient_bg.xml
+#	new file:   res/drawable-xxhdpi/gradient_bg_hover.xml
+#	new file:   res/drawable-xxhdpi/image_bg.xml
+#	new file:   res/drawable-xxhdpi/list_selector.xml
+#	new file:   res/drawable-xxhdpi/no_image.png
+#	modified:   res/layout/fragment_search.xml
+#	new file:   res/layout/search_listrow.xml
+#	new file:   src/com/hav3n/tvshowmanager/FileCache.java
+#	new file:   src/com/hav3n/tvshowmanager/ImageLoader.java
+#	new file:   src/com/hav3n/tvshowmanager/MemoryCache.java
+#	new file:   src/com/hav3n/tvshowmanager/SearchListAdapter.java
+#	modified:   src/com/hav3n/tvshowmanager/ShowSearchFragment.java
+#	new file:   src/com/hav3n/tvshowmanager/Utils.java
+#	modified:   src/com/hav3n/tvshowmanager/XMLParser.java
+#	new file:   src/com/hav3n/tvshowmanager/constants/Constants.java
+#	new file:   ysq4k1dn.jbq.txt
+#
+# Changes not staged for commit:
+#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	deleted:    bin/classes/com/hav3n/tvshowmanager/URLConstants.class
+#	deleted:    src/com/hav3n/tvshowmanager/URLConstants.java
+#
+
