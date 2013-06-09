@@ -23,6 +23,7 @@ import com.hav3n.tvshowmanager.constants.Constants;
 
 public class XMLParser
 {
+	static ArrayList<String> genres = new ArrayList<String>();
 
 	public String getXmlFromUrl(String url) throws UnsupportedEncodingException, ClientProtocolException, IOException
 	{
@@ -83,6 +84,7 @@ public class XMLParser
 
 		ArrayList<HashMap<String, String>> showInfoEntries = new ArrayList<HashMap<String, String>>();
 		HashMap<String, String> temp = new HashMap<String, String>();
+		
 
 		parser.require(XmlPullParser.START_TAG, null, Constants.TAG_SHOWINFO);
 
@@ -92,6 +94,11 @@ public class XMLParser
 
 		return temp;
 
+	}
+
+	public ArrayList<String> parseShowGenres() throws XmlPullParserException, IOException
+	{
+		return genres;
 	}
 	public static class ShowEntry
 	{
@@ -116,7 +123,7 @@ public class XMLParser
 		public String airday;
 		public String airtime;
 		public String timezone;
-		public List<String> genres;
+		
 
 		public static HashMap<String, String> readShow(XmlPullParser parser) throws XmlPullParserException, IOException
 		{
@@ -201,6 +208,7 @@ public class XMLParser
 		{
 
 			HashMap<String, String> map = new HashMap<String, String>();
+			
 
 			parser.require(XmlPullParser.START_TAG, null, Constants.TAG_SHOWINFO);
 
@@ -275,6 +283,15 @@ public class XMLParser
 					parser.require(XmlPullParser.START_TAG, null, Constants.TAG_SUMMARY);
 					map.put(Constants.TAG_SUMMARY, parser.nextText());
 					parser.require(XmlPullParser.END_TAG, null, Constants.TAG_SUMMARY);
+				} else if (tagname.equals(Constants.TAG_GENRES))
+				{
+					parser.require(XmlPullParser.START_TAG, null, Constants.TAG_GENRES);
+					while (parser.next() != XmlPullParser.END_TAG)
+					{
+						parser.require(XmlPullParser.START_TAG, null, Constants.TAG_GENRE);
+						genres.add(parser.nextText());
+						parser.require(XmlPullParser.END_TAG, null, Constants.TAG_GENRE);
+					}
 				} else if (tagname.equals(Constants.TAG_RUNTIME))
 				{
 					parser.require(XmlPullParser.START_TAG, null, Constants.TAG_RUNTIME);
@@ -336,35 +353,6 @@ public class XMLParser
 			}
 		}
 
-		public static ArrayList<String> parseShowGenres(String xml) throws XmlPullParserException, IOException
-		{
-			XmlPullParser parser = Xml.newPullParser();
-			parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
-			parser.setInput(new StringReader(xml));
-			parser.nextTag();
-
-			ArrayList<String> genres = new ArrayList<String>();
-
-			parser.require(XmlPullParser.START_TAG, null, Constants.TAG_GENRES);
-
-			while (parser.next() != XmlPullParser.END_TAG)
-			{
-				String tagname = parser.getName();
-
-				if (tagname.equals(Constants.TAG_GENRES))
-				{
-					parser.require(XmlPullParser.START_TAG, null, Constants.TAG_GENRE);
-					genres.add(parser.nextText());
-					parser.require(XmlPullParser.END_TAG, null, Constants.TAG_GENRE);
-				} else
-				{
-					skip(parser);
-				}
-
-			}
-
-			return genres;
-
-		}
+		
 	}
 }

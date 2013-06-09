@@ -8,5 +8,13 @@
     <string name="title_section3">My Shows</string>
     <string name="queryHint_Text">Enter the name of a series...</string>
     <string name="search_notext">Enter a Search Query</string>
+    <string name="status_label_text"><b><u>Status:</u></b></string>
+    <string name="runtime_label_text"><b><u>Runtime:</u></b></string>
+    <string name="network_label_text"><b><u>Network:</u></b></string>
+    <string name="airday_label_text"><b><u>Airday:</u></b></string>
+    <string name="timezone_label_text"><b><u>TimeZone:</u></b></string>
+    <string name="summary_label_text"><b><u>Summary:</u></b></string>
+    <string name="genres_label_text"><b><u>Genres:</u></b></string>
+    <string name="episodelist_button_text">Show Episode List</string>
 
 </resources>

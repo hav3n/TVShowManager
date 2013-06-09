@@ -57,22 +57,33 @@ public class SearchListAdapter extends BaseAdapter
 	public View getView(int position, View convertView, ViewGroup parent)
 	{
 		View v = convertView;
-
+		HashMap<String, String> map = new HashMap<String, String>();
+		String images=new String("");
+		try
+		{
 		if (convertView == null)
 			v = inflater.inflate(R.layout.search_listrow, null);
 
 		showName = (TextView) v.findViewById(R.id.title);
 		showImage = (ImageView) v.findViewById(R.id.list_image);
 
-		HashMap<String, String> map = new HashMap<String, String>();
-		String images;
+		
+		
 		map = showInfoEntries.get(position);
 		images = imageUrls.get(position);
 
 		Log.i("INFO", map.get(Constants.TAG_NAME));
-
+		}
+		catch(IndexOutOfBoundsException e)
+		{
+			showImage.setImageResource(R.drawable.no_image_available);
+		}
+		finally
+		{
 		showName.setText(map.get(Constants.TAG_NAME));
 		imageLoader.DisplayImage(images, showImage);
+		}
+		
 
 		return v;
 	}

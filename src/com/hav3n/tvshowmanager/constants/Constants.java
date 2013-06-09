@@ -2,7 +2,7 @@ package com.hav3n.tvshowmanager.constants;
 
 public class Constants
 {
-	public static String SEARCH = "http://services.tvrage.com/feeds/search.php?show=%s";
+	public static String SEARCH = "http://services.tvrage.com/feeds/search.php?key=IwZcTIWu84sYwDR6g9Qn&show=%s";
 	public static String DETAILED_SEARCH = "http://services.tvrage.com/feeds/full_search.php?show=%s";
 	public static String SHOW_INFO = "http://services.tvrage.com/myfeeds/showinfo.php?key=IwZcTIWu84sYwDR6g9Qn&sid=%s";
 	public static String EPISODE_LIST = "http://services.tvrage.com/feeds/episode_list.php?sid=%s";

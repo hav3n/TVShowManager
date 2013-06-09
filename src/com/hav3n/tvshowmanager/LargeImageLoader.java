@@ -20,7 +20,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.widget.ImageView;
 
-public class ImageLoader
+public class LargeImageLoader
 {
 
 	MemoryCache memoryCache = new MemoryCache();
@@ -28,13 +28,13 @@ public class ImageLoader
 	private Map<ImageView, String> imageViews = Collections.synchronizedMap(new WeakHashMap<ImageView, String>());
 	ExecutorService executorService;
 
-	public ImageLoader(Context context)
+	public LargeImageLoader(Context context)
 	{
 		fileCache = new FileCache(context);
 		executorService = Executors.newFixedThreadPool(5);
 	}
 
-	final int stub_id = R.drawable.no_image_available;
+	final int stub_id = R.drawable.no_image;
 	public void DisplayImage(String url, ImageView imageView)
 	{
 		imageViews.put(imageView, url);
@@ -96,7 +96,7 @@ public class ImageLoader
 			BitmapFactory.decodeStream(new FileInputStream(f), null, o);
 
 			// Find the correct scale value. It should be the power of 2.
-			final int REQUIRED_SIZE = 70;
+			final int REQUIRED_SIZE = 210;
 			int width_tmp = o.outWidth, height_tmp = o.outHeight;
 			int scale = 1;
 			while (true)
